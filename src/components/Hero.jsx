@@ -252,7 +252,7 @@ export default function Hero() {
                   <div className="w-32 h-32 rounded-full p-[3px] bg-gradient-to-br from-violet-500 to-cyan-400">
                     <div className="w-full h-full rounded-full overflow-hidden bg-dark-700">
                       <img
-                        src="/profile.png"
+                        src={`${import.meta.env.BASE_URL}profile.png`}
                         alt="Hemanth Mydugolam"
                         className="w-full h-full object-cover"
                         onError={(e) => {
