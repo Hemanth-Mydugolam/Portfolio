@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-dark-900 text-white antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+    margin: 0;
+    scrollbar-width: thin;
+    scrollbar-color: #334155 #060b18;
+  }
+
+  body::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  body::-webkit-scrollbar-track {
+    background: #060b18;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background-color: #334155;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+
+  .glass-hover {
+    @apply hover:bg-white/10 hover:border-white/20 transition-all duration-300;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-violet-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent;
+  }
+
+  .gradient-text-hero {
+    background: linear-gradient(135deg, #818cf8 0%, #a78bfa 30%, #22d3ee 70%, #67e8f9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white font-medium rounded-xl transition-all duration-300;
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 0 40px rgba(99, 102, 241, 0.4);
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 glass glass-hover text-white font-medium rounded-xl transition-all duration-300;
+  }
+
+  .card {
+    @apply glass glass-hover rounded-2xl p-6 transition-all duration-300;
+  }
+
+  .nav-link {
+    @apply text-sm font-medium text-slate-400 hover:text-white transition-colors duration-200 relative;
+  }
+
+  .nav-link-active {
+    @apply text-white;
+  }
+
+  .progress-bar {
+    background: linear-gradient(90deg, #6366f1, #8b5cf6, #06b6d4);
+    background-size: 200% 100%;
+  }
+
+  .section-divider {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-violet-500/30 to-transparent my-4;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: floatAnim 6s ease-in-out infinite;
+  }
+}
+
+@keyframes floatAnim {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-16px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.chat-bubble-in {
+  animation: slideInRight 0.3s ease-out;
+}
+
+.chat-bubble-out {
+  animation: slideInLeft 0.3s ease-out;
+}
