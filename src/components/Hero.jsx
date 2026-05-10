@@ -248,19 +248,19 @@ export default function Hero() {
               <div className="absolute inset-0 bg-gradient-to-br from-violet-600/10 to-cyan-600/5 pointer-events-none" />
               <div className="flex items-center gap-4">
                 {/* Photo with gradient ring */}
-                <div className="relative flex-shrink-0">
-                  <div className="w-32 h-32 rounded-full p-[3px] bg-gradient-to-br from-violet-500 to-cyan-400">
-                    <div className="w-full h-full rounded-full overflow-hidden bg-dark-700">
+                <div className="relative flex-shrink-0" style={{ width: '128px', height: '128px' }}>
+                  <div style={{ width: '128px', height: '128px', borderRadius: '9999px', padding: '3px', background: 'linear-gradient(135deg, #8b5cf6, #06b6d4)' }}>
+                    <div style={{ width: '100%', height: '100%', borderRadius: '9999px', overflow: 'hidden', background: '#0a1120' }}>
                       <img
                         src={`${import.meta.env.BASE_URL}profile.png`}
                         alt="Hemanth Mydugolam"
-                        className="w-full h-full object-cover"
+                        style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }}
                         onError={(e) => {
                           e.target.style.display = 'none';
                           e.target.nextSibling.style.display = 'flex';
                         }}
                       />
-                      <div className="w-full h-full bg-gradient-to-br from-violet-600 to-cyan-500 items-center justify-center text-white text-2xl font-bold" style={{ display: 'none' }}>
+                      <div style={{ display: 'none', width: '100%', height: '100%', background: 'linear-gradient(135deg, #7c3aed, #06b6d4)', alignItems: 'center', justifyContent: 'center', color: 'white', fontSize: '1.5rem', fontWeight: 'bold' }}>
                         HM
                       </div>
                     </div>
